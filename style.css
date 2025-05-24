@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #111;
+    background-color: #000000;
     color: #fff;
   }
   
@@ -33,12 +33,12 @@ body {
   
   .color-button.active {
     opacity: 1;
-    filter: brightness(150%);
+    filter: brightness(400%);
   }
   
-  .red { background-color: red; }
+  .red { background-color: rgb(211, 0, 0); }
   .green { background-color: green; }
-  .blue { background-color: blue; }
+  .blue { background-color: rgb(0, 0, 223); }
   .yellow { background-color: gold; }
   
   #start-btn {

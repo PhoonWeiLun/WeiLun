@@ -6,6 +6,9 @@ let playing = false;
 const statusText = document.getElementById("status");
 const startBtn = document.getElementById("start-btn");
 
+let score = 0;
+const scoreText = document.getElementById("score");
+
 const buttons = {
   red: document.getElementById("red"),
   green: document.getElementById("green"),
@@ -22,6 +25,8 @@ for (let color of colors) {
 function startGame() {
   sequence = [];
   playerSequence = [];
+  score = 0;
+  updateScore();
   playing = true;
   statusText.textContent = "Watch the sequence...";
   nextRound();
@@ -51,6 +56,10 @@ function highlight(color) {
   });
 }
 
+function updateScore() {
+  scoreText.textContent = `Score: ${score}`;
+}
+
 function handleClick(color) {
   if (!playing) return;
 
@@ -65,6 +74,8 @@ function handleClick(color) {
   }
 
   if (playerSequence.length === sequence.length) {
+     score++;
+      updateScore();
     statusText.textContent = "Good! Next round...";
     setTimeout(nextRound, 1000);
   }
